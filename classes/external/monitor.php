@@ -41,7 +41,6 @@ use required_capability_exception;
  * Web Service functions for external task monitor.
  */
 class monitor extends external_api {
-
     /**
      * Implements the "tool_externaltaskmonitor_get_scheduled_tasks" web service endpoint.
      * Returns metadata about each scheduled tasks configured in this Moodle instance.
