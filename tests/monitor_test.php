@@ -50,7 +50,7 @@ final class monitor_test extends externallib_advanced_testcase {
     /**
      * {@inheritDoc}
      */
-    protected function parent::setUp(): void {
+    protected function setUp(): void {
         $this->resetAfterTest();
     }
 
