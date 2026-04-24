@@ -52,7 +52,6 @@ final class monitor_test extends externallib_advanced_testcase {
      */
     protected function setUp(): void {
         parent::setUp();
-
         $this->resetAfterTest();
     }
 
