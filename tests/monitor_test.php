@@ -47,11 +47,11 @@ require_once($CFG->dirroot . '/webservice/tests/helpers.php');
  * @covers \tool_externaltaskmonitor\external\monitor
  */
 final class monitor_test extends externallib_advanced_testcase {
-
     /**
      * {@inheritDoc}
      */
     protected function setUp(): void {
+        parent::setUp();
         $this->resetAfterTest();
     }
 
@@ -76,25 +76,25 @@ final class monitor_test extends externallib_advanced_testcase {
         $this->assertCount(4, $innerstructure->keys);
 
         $componentvalue = $innerstructure->keys['component'];
-        $this->assertTrue( $componentvalue instanceof external_value);
+        $this->assertTrue($componentvalue instanceof external_value);
         $this->assertEquals(VALUE_REQUIRED, $componentvalue->required);
         $this->assertEquals('Task Component', $componentvalue->desc);
         $this->assertEquals(PARAM_TEXT, $componentvalue->type);
 
         $componentvalue = $innerstructure->keys['class'];
-        $this->assertTrue( $componentvalue instanceof external_value);
+        $this->assertTrue($componentvalue instanceof external_value);
         $this->assertEquals(VALUE_REQUIRED, $componentvalue->required);
         $this->assertEquals('Task Class', $componentvalue->desc);
         $this->assertEquals(PARAM_TEXT, $componentvalue->type);
 
         $componentvalue = $innerstructure->keys['lastruntime'];
-        $this->assertTrue( $componentvalue instanceof external_value);
+        $this->assertTrue($componentvalue instanceof external_value);
         $this->assertEquals(VALUE_REQUIRED, $componentvalue->required);
         $this->assertEquals('Last Run Time', $componentvalue->desc);
         $this->assertEquals(PARAM_INT, $componentvalue->type);
 
         $componentvalue = $innerstructure->keys['disabled'];
-        $this->assertTrue( $componentvalue instanceof external_value);
+        $this->assertTrue($componentvalue instanceof external_value);
         $this->assertEquals(VALUE_REQUIRED, $componentvalue->required);
         $this->assertEquals('Disabled', $componentvalue->desc);
         $this->assertEquals(PARAM_BOOL, $componentvalue->type);
@@ -193,7 +193,7 @@ final class monitor_test extends externallib_advanced_testcase {
         $filteredtasks = array_values(
             array_filter(
                 $tasks,
-                function($task) use ($classname) {
+                function ($task) use ($classname) {
                     return $task['class'] === $classname;
                 }
             )
